@@ -1,0 +1,12 @@
+# Local/editor/runtime files
+.DS_Store
+*.swp
+*.tmp
+.env
+.env.*
+!.env.example
+__pycache__/
+
+# Private evaluator exports and local evidence; never publish by accident.
+/reports/
+AUDIT.md

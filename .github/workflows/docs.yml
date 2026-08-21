@@ -1,0 +1,30 @@
+name: Documentation checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Check documentation
+        run: python3 scripts/check-docs.py
+      - name: Check whitespace
+        run: git diff --check
+      - name: Check tracked credential patterns
+        shell: bash
+        run: |
+          if git grep -n -I -E '(ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[0-9A-Z]{16}|BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY|xox[baprs]-|sk-[A-Za-z0-9]{20,})' -- .; then
+            echo 'Potential credential pattern found; review before merging.' >&2
+            exit 1
+          fi
+      - name: Check private exports are absent
+        run: test ! -e reports && test ! -e AUDIT.md

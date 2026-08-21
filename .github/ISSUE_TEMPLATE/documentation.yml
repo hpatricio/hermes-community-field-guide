@@ -1,0 +1,37 @@
+name: Documentation issue
+description: Report a stale, unclear or unsafe guide instruction
+title: "docs: "
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include API keys, tokens, passwords, auth.json, .env contents,
+        session databases, raw transcripts, private paths or unredacted logs.
+  - type: input
+    id: hermes-version
+    attributes:
+      label: Hermes version
+      placeholder: "Output of hermes --version"
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: OS and surface
+      placeholder: "Linux / CLI, TUI, desktop, dashboard or gateway"
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: Redacted report
+      description: Include the guide page, command, observed result and expected result.
+    validations:
+      required: true
+  - type: textarea
+    id: checks
+    attributes:
+      label: Read-only checks already run
+      placeholder: "hermes doctor; hermes status --all"
