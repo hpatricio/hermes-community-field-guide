@@ -1,0 +1,19 @@
+{
+  "contractVersion": "0.1.0",
+  "kind": "portable-llm-routing-contract",
+  "capability": "llm-routing",
+  "owner": "consumer-selected",
+  "interfaces": {
+    "routing": "stable class aliases mapped by an explicitly configured adapter",
+    "selection": "request + reference-only model evidence -> recommendation",
+    "evaluation": "candidate -> bounded workload result -> validation status"
+  },
+  "selection": {
+    "taskClasses": ["transformational", "analytical", "tool-using", "agentic"],
+    "requirements": ["intelligence", "coding", "math", "context_window", "tool_call", "structured_output", "reasoning", "open_weights"],
+    "priorityWeights": ["quality", "cost", "speed"],
+    "outputs": ["shortlist", "primary", "fallback", "score", "tradeoffs", "provenance", "validation"]
+  },
+  "security": {"network": "optional-adapter-only", "credentials": "caller-managed", "payloadPolicy": "reference_only", "canonicalWrite": false},
+  "lifecycle": {"readOnly": ["plan", "status", "preflight", "select"], "gatedMutation": ["apply", "rollback", "refresh", "activate"], "onConflict": "human_review"}
+}

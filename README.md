@@ -13,7 +13,8 @@ New to Hermes? Follow this order:
 3. [Troubleshooting](docs/troubleshooting.md) — classify failures before changing state.
 4. [Security basics](docs/security-basics.md) — keep credentials and private runtime data out of reports.
 5. [Community resources](docs/community-resources.md) — curated links, not endorsements.
-6. [Support and services](docs/support-and-services.md) — a transparent, low-risk support offer and activation checklist.
+6. [Portable LLM routing](docs/llm-routing.md) — an optional, credential-free package for bounded routing utilities.
+7. [Support and services](docs/support-and-services.md) — a transparent, low-risk support offer and activation checklist.
 
 Maintainers and contributors should also read [review metadata](docs/review-metadata.md), [compatibility record](COMPATIBILITY.md), [contributing](CONTRIBUTING.md) and [security policy](SECURITY.md).
 

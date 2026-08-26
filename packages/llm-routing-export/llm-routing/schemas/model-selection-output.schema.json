@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/portable-llm-routing/model-selection-output.schema.json",
+  "type": "object",
+  "required": ["schemaVersion", "taskClass", "primary", "fallback", "shortlist", "provenance", "validation"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {"const": "0.1.0"}, "taskClass": {"type": "string"}, "primary": {"type": ["object", "null"]}, "fallback": {"type": "array", "items": {"type": "object"}}, "shortlist": {"type": "array", "items": {"type": "object"}},
+    "provenance": {"type":"object", "required":["sourceType","evidenceStatus"]},
+    "validation": {"type":"object", "required":["status","activationAllowed"], "properties":{"activationAllowed":{"type":"boolean"}}}
+  }
+}

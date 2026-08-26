@@ -1,0 +1,22 @@
+# Reference only. No credentials. Review model IDs and endpoints before use.
+model_list:
+  - model_name: local-text
+    litellm_params:
+      model: ollama/qwen3:4b
+      api_base: http://127.0.0.1:11434
+      extra_body:
+        think: false
+  - model_name: local-coder
+    litellm_params:
+      model: ollama/qwen2.5-coder:3b
+      api_base: http://127.0.0.1:11434
+router_settings:
+  routing_strategy: simple-shuffle
+  num_retries: 1
+  timeout: 120
+  fallbacks:
+    - {"local-text": ["local-coder"]}
+litellm_settings:
+  drop_params: true
+  request_timeout: 120
+  json_logs: true

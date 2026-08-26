@@ -1,0 +1,12 @@
+{
+  "id": "llm-routing",
+  "version": "0.1.0",
+  "label": "Portable LLM routing utilities for Hermes",
+  "kind": "optional-capability",
+  "enabledByDefault": false,
+  "requires": ["bash", "python3"],
+  "install": {"entrypoint": "install-hermes.sh", "modes": ["plan", "status", "apply", "rollback"]},
+  "security": {"secretPolicy": "credentials remain outside the package", "payloadPolicy": "reference_only", "canonicalWrite": false},
+  "runtime": {"owner": "consumer-hermes-profile", "path": "$HERMES_HOME/llm-routing", "services": [], "ports": []},
+  "lifecycle": {"readOnly": ["plan", "status", "preflight", "select", "compare", "cost"], "gatedMutation": ["apply", "rollback"], "onConflict": "human_review"}
+}

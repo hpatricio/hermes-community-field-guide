@@ -1,0 +1,8 @@
+{
+  "provenance": {"sourceType":"fixture", "sourceRevision":"reference-adapter:4d5e6cfd48f5ebdf5f3b81a839460030416d5d7b", "capturedAt":null, "evidenceStatus":"observed"},
+  "models": [
+    {"name":"cheap-tool","intelligence":36,"coding":36,"tool_call":true,"structured_output":true,"price":0.5,"tps":150},
+    {"name":"strong-tool","intelligence":49,"coding":45,"tool_call":true,"structured_output":true,"price":5.0,"tps":80},
+    {"name":"no-tools","intelligence":55,"coding":50,"tool_call":false,"structured_output":true,"price":3.0,"tps":90}
+  ]
+}

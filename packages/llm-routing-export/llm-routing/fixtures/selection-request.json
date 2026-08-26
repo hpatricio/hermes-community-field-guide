@@ -1,0 +1,5 @@
+{
+  "taskClass": "tool-using",
+  "requirements": {"min_intelligence": 35, "min_coding": 35, "tool_call": true, "structured_output": true},
+  "priority": {"quality": 0.4, "cost": 0.4, "speed": 0.2}
+}

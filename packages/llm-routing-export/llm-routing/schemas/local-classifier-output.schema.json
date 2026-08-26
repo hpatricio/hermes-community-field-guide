@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/portable-llm-routing/local-classifier-output.schema.json",
+  "type": "object",
+  "required": ["task_type", "required_inputs", "allowed_tools", "specialist", "success_criteria", "privacy_class", "max_retries"],
+  "additionalProperties": false,
+  "properties": {
+    "task_type": {"type":"string", "enum":["classification","cheap-summary","text-normalization","coding","research","data","tools","high-risk"]},
+    "required_inputs": {"type":"array", "items":{"type":"string","minLength":1}, "maxItems":16},
+    "allowed_tools": {"type":"array", "items":{"type":"string","minLength":1}, "maxItems":16},
+    "specialist": {"type":"string", "enum":["local-classifier","local-text","local-coder","quality","coding"]},
+    "success_criteria": {"type":"array", "items":{"type":"string","minLength":1}, "minItems":1, "maxItems":8},
+    "privacy_class": {"type":"string", "enum":["local-safe","cloud-approved","restricted"]},
+    "max_retries": {"type":"integer", "minimum":0, "maximum":2}
+  }
+}

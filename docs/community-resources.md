@@ -8,6 +8,10 @@ This is a curated index, not an endorsement. Each entry should be reviewed befor
 - [Hermes Agent documentation](https://hermes-agent.nousresearch.com/docs/) — official user and reference documentation.
 - [Hermes skills catalog](https://hermes-agent.nousresearch.com/docs/reference/skills-catalog) — official skills reference.
 
+## Community packages
+
+- [Portable LLM routing package](../packages/llm-routing-export/README.md) — optional, provider-neutral utilities for offline model selection, comparison, cost projection and preflight. Credential-free and reference-only; unofficial community material.
+
 ## Private and unpublished references
 
 Some maintainers may use private companion projects while preparing community
